@@ -77,7 +77,12 @@ body {
   color: var(--clr-primary);
   background-color: var(--clr-secondary);
 }
-.app .nav .nav-wrapper .nav-logout {
+.app .nav .nav-wrapper .nav-btns {
+  display: flex;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.app .nav .nav-wrapper .nav-btns .nav-logout {
   font-size: 1rem;
   padding: 12px 24px;
   background-color: var(--clr-fifth);
@@ -87,8 +92,21 @@ body {
   will-change: opacity;
   transition: 0.3s;
 }
-.app .nav .nav-wrapper .nav-logout:hover {
+.app .nav .nav-wrapper .nav-btns .nav-logout:hover {
   opacity: 0.9;
+}
+.app .nav .nav-wrapper .nav-btns .nav-reg {
+  font-size: 1rem;
+  padding: 12px 24px;
+  background-color: var(--clr-primary);
+  border-radius: 36px;
+  color: var(--clr-background);
+  text-decoration: none;
+  will-change: opacity;
+  transition: 0.3s;
+}
+.app .nav .nav-wrapper .nav-btns .nav-reg:hover {
+  opacity: 0.75;
 }
 .app .section {
   min-height: calc(100vh - 5rem);

@@ -79,17 +79,34 @@ body {
                     }
                 }
             }
-            .nav-logout {
-                font-size: 1rem;
-                padding: 12px 24px;
-                background-color: var(--clr-fifth);
-                border-radius: 36px;
-                color: var(--clr-background);
-                text-decoration: none;
-                will-change: opacity;
-                transition: .3s;
-                &:hover {
-                    opacity: .9;
+            .nav-btns {
+                display: flex;
+                column-gap: 1.5rem;
+                .nav-logout {
+                    font-size: 1rem;
+                    padding: 12px 24px;
+                    background-color: var(--clr-fifth);
+                    border-radius: 36px;
+                    color: var(--clr-background);
+                    text-decoration: none;
+                    will-change: opacity;
+                    transition: .3s;
+                    &:hover {
+                        opacity: .9;
+                    }
+                }
+                .nav-reg {
+                    font-size: 1rem;
+                    padding: 12px 24px;
+                    background-color: var(--clr-primary);
+                    border-radius: 36px;
+                    color: var(--clr-background);
+                    text-decoration: none;
+                    will-change: opacity;
+                    transition: .3s;
+                    &:hover {
+                        opacity: .75;
+                    }
                 }
             }
         }

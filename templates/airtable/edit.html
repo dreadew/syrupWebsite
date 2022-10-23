@@ -41,6 +41,12 @@
                     </li>
                 </ul>
                 <a href="{% url 'logout' %}" class="nav-logout">Выйти</a>
+                <div class="nav-btns">
+                    <a href="{% url 'logout' %}" class="nav-logout">Выйти</a>
+                    {% if user.is_superuser %}
+                        <a href="{% url 'register' %}" class="nav-reg">Зарегистрировать аккаунт</a>
+                    {% endif %}
+                </div>
             </nav>
         </header>
         <section class="section container">
