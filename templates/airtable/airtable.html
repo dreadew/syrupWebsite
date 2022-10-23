@@ -1,0 +1,88 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Syrup | Главная страница{% endblock %}
+
+{% block content %}
+    <div class="app">
+        <header class="nav">
+            <nav class="nav-wrapper container">
+                <a class="nav-logo__wrapper" href="{% url 'main' %}">
+                    <svg width="119" height="24" viewBox="0 0 119 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_4_804)">
+                        <path d="M0 22.4813L1.4013 18.9175C3.14505 19.576 4.99903 19.8936 6.86255 19.8529C9.34322 19.8529 10.4832 19.0955 10.4832 17.8381C10.4832 14.4788 0.674147 15.384 0.674147 8.36992C0.674147 4.40085 4.43871 2.68899 8.08965 2.68899C10.3174 2.62955 12.5265 3.11033 14.528 4.09027L13.0964 7.53669C11.5815 7.09736 10.3241 6.68834 8.2222 6.68834C6.12025 6.68834 5.50672 7.4761 5.50672 8.35096C5.50672 11.0967 15.4938 11.0967 15.4938 17.6677C15.4938 22.1897 11.1725 23.9432 6.90802 23.9432C3.53355 23.9394 1.549 23.3259 0 22.4813Z" fill="#1A2A3E"/>
+                        <path d="M28.4501 16.9897L20.8301 2.97681H26.5527L31.0974 12.8237L35.9413 2.97681H41.52L33.4076 16.8155V23.6326H28.4501V16.9897Z" fill="#1A2A3E"/>
+                        <path d="M57.4946 19.1788L55.1578 16.4671C54.8094 16.4936 54.4307 16.4936 54.0482 16.4936H52.5333V23.6175H47.5378V2.97681H55.5669C60.2101 2.97681 63.5202 5.10902 63.5202 9.72193C63.5344 10.868 63.2309 11.9957 62.6433 12.9797C62.0557 13.9638 61.2069 14.7658 60.1911 15.2968L62.2931 17.5692C63.4293 18.7963 64.7169 19.6143 66.9628 20.1976L65.8531 23.9848C61.8462 23.7917 59.6533 21.6898 57.4946 19.1788ZM54.2375 13.0207C57.184 13.0207 58.4414 11.7936 58.4414 9.83936C58.4414 7.76393 57.5931 6.88905 54.9382 6.88905H52.5408V13.0207H54.2375Z" fill="#1A2A3E"/>
+                        <path d="M72.2311 12.2935L75.7344 0.552948L80.548 1.98834L77.094 13.5433C76.1926 16.5732 77.0599 18.6524 80.0821 19.5575C83.1044 20.4627 85.0056 19.1069 86.0547 15.5809L89.3307 4.59778L94.0042 5.99527L90.7017 17.0466C88.6376 23.9584 83.343 24.7499 78.9195 23.4319C74.3596 22.1064 70.3185 18.7054 72.2311 12.2935Z" fill="#1A2A3E"/>
+                        <path d="M102.226 2.97681H110.255C114.899 2.97681 118.209 5.69228 118.209 10.3052C118.209 14.3652 114.88 17.7775 108.718 17.7775H107.203V23.6175H102.211L102.226 2.97681ZM107.218 13.9599H108.911C112.009 13.9599 113.115 12.3541 113.115 10.4264C113.115 8.35093 112.27 6.86256 109.611 6.86256H107.218V13.9599Z" fill="#1A2A3E"/>
+                        <path d="M87.4861 7.09737C89.3798 1.03772 91.4173 1.13238 93.2163 1.68153C97.2119 2.90104 94.8524 8.38884 94.4737 9.42655C93.5496 11.9716 98.0943 12.6647 99.1207 10.4415C100.537 7.37003 98.3215 0.0303022 92.3906 3.93064e-06C85.9523 -0.0302943 86.9029 8.53271 80.2714 6.49515L78.0293 13.9902C77.3324 16.3232 78.0028 17.9365 80.3358 18.6334C82.6687 19.3303 84.123 18.285 84.9486 15.5657L87.4861 7.09737Z" fill="#0071FF"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_4_804">
+                        <rect width="118.224" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'airtable' %}">Airtable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Miro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trello</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Keitaro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FBtool</a>
+                    </li>
+                </ul>
+                <a href="{% url 'logout' %}" class="nav-logout">Выйти</a>
+            </nav>
+        </header>
+        <section class="section container">
+            <div class="table-wrapper">
+                <div class="upper">
+                    <h2 class="upper-title">Untitled Base</h2>
+                    <a href="{% url 'airtable-create' %}" class="upper-button">Добавить запись</a>
+                </div>
+                <table class="section-data">
+                        <tr class="data-wrapper">
+                            <th class="data-text">Id</th>
+                            <th class="data-text">Name</th>
+                            <th class="data-text">Status</th>
+                            <th class="data-text">Priority</th>
+                            <th class="data-text">Deadline</th>
+                            <th class="data-text">Actions</th>
+                        </tr>
+                    {% for k in result %}
+                        <tr class="data-wrapper">
+                            <td class="data-text">{{ k.id }}</td>
+                            <td class="data-text">{{ k.fields.Name }}</td>
+                            <td class="data-text">{{ k.fields.Status }}</td>
+                            <td class="data-text">{{ k.fields.Priority }}</td>
+                            <td class="data-text">{{ k.fields.Deadline }}</td>
+                            <td class="data-text">
+                                <a href="{% url 'airtable-edit' k.id %}" class="edit-button button">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7327 5.31804L8.46997 3.05531L2.11738 9.40791L2.11755 9.40808L1.13143 12.6568L4.38032 11.6707L4.38019 11.6705L10.7327 5.31804Z" fill="#1A2A3E"/>
+                                        <rect x="11.314" y="0.211853" width="3.19998" height="2.99464" rx="1.49732" transform="rotate(45 11.314 0.211853)" fill="#1A2A3E"/>
+                                    </svg>
+                                </a>
+                                <a href="{% url 'airtable-delete' k.id %}" class="delete-button button">
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2.95776" y="5.52381" width="9.52382" height="10.4762" rx="2" fill="#FF3D60"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.4815 0.25C12.4815 0.111929 12.3696 0 12.2315 0H3.20768C3.06961 0 2.95768 0.111929 2.95768 0.25V1.94048C2.95768 2.07855 3.06961 2.19048 3.20768 2.19048H12.2315C12.3696 2.19048 12.4815 2.07855 12.4815 1.94048V0.25ZM14.3862 2.44051C14.3862 2.30243 14.2743 2.19051 14.1362 2.19051H0.82666C0.688589 2.19051 0.57666 2.30243 0.57666 2.44051V4.13099C0.57666 4.26906 0.688589 4.38099 0.82666 4.38099H14.1362C14.2743 4.38099 14.3862 4.26906 14.3862 4.13099V2.44051Z" fill="#FF3D60"/>
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </section>
+    </div>
+{% endblock %}
