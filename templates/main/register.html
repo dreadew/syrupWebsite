@@ -64,7 +64,7 @@
           </svg>
         </div>
         <div class="rectangle-right">
-          <svg width="189" height="189" viewBox="0 0 189 189" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="167" height="189" viewBox="0 0 167 189" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M189 1.43051e-06V189H75.6V113.4C75.6 98.5081 78.5332 83.762 84.2321 70.0037C89.9309 56.2454 98.2839 43.7443 108.814 33.2141C130.081 11.9475 158.924 1.43051e-06 189 1.43051e-06V1.43051e-06Z" fill="#A8B7CF"/>
             <path d="M38.1706 117.261C29.7062 117.261 22.8446 124.123 22.8446 132.587C22.8446 141.052 29.7062 147.913 38.1706 147.913C46.6349 147.913 53.4966 141.052 53.4966 132.587C53.4966 124.123 46.6349 117.261 38.1706 117.261Z" fill="#A8B7CF"/>
             <path d="M38.1706 41.0867C29.7062 41.0867 22.8446 47.9484 22.8446 56.4127C22.8446 64.877 29.7062 71.7387 38.1706 71.7387C46.6349 71.7387 53.4966 64.877 53.4966 56.4127C53.4966 47.9484 46.6349 41.0867 38.1706 41.0867Z" fill="#A8B7CF"/>
@@ -210,12 +210,14 @@
       </div>
         </div>
     {% else %}
-        <div class="register-info">
-            <h2 class="register-title">Регистрация</h2>
-            <p class="register-desc">Для регистрации вам нужно перейти по ссылке снизу</p>
-            <div class="register-links">
-                <a href="#" class="register-link">Создать аккаунт</a>
-            <a href="{% url 'index' %}" class="login-link">Войти в аккаунт</a>
+        <div class="wrapper">
+            <div class="register-info">
+                <h2 class="register-title">Регистрация</h2>
+                <p class="register-desc">Для регистрации вам нужно перейти по ссылке снизу</p>
+                <div class="register-links">
+                    <a href="#" class="register-link">Создать аккаунт</a>
+                <a href="{% url 'index' %}" class="login-link">Войти в аккаунт</a>
+                </div>
             </div>
         </div>
     {% endif %}

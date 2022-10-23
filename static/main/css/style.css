@@ -20,11 +20,6 @@
   font-family: "Inter", sans-serif;
 }
 
-body {
-  height: 100vh;
-  overflow: hidden;
-}
-
 ::-webkit-input-placeholder {
   color: var(--clr-fourth);
 }
@@ -34,8 +29,8 @@ body {
 }
 
 .container {
-  margin-left: 8rem;
-  margin-right: 8rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 .app {
@@ -81,6 +76,9 @@ body {
   display: flex;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
+}
+.app .nav .nav-wrapper .nav-btns .nav-menu {
+  display: none;
 }
 .app .nav .nav-wrapper .nav-btns .nav-logout {
   font-size: 1rem;
@@ -282,10 +280,13 @@ body {
   transform: rotate(-45deg);
 }
 
-.register-info {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+.wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .register-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -301,24 +302,23 @@ body {
   padding: 2rem;
   border-radius: 24px;
   box-shadow: 0px 16px 32px 0px #E0EAF6;
-  transform: translate(-50%, -50%);
 }
-.register-info .register-title {
+.wrapper .register-info .register-title {
   font-size: var(--h2-font-size);
   color: var(--clr-fifth);
 }
-.register-info .register-desc {
+.wrapper .register-info .register-desc {
   font-size: var(--p-font-size);
   color: var(--clr-fourth);
 }
-.register-info .register-links {
+.wrapper .register-info .register-links {
   display: flex;
   align-items: center;
   justify-content: center;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
 }
-.register-info .register-links .register-link {
+.wrapper .register-info .register-links .register-link {
   font-size: 1rem;
   border: transparent;
   background-color: var(--clr-primary);
@@ -330,10 +330,10 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-.register-info .register-links .register-link:hover {
+.wrapper .register-info .register-links .register-link:hover {
   opacity: 0.75;
 }
-.register-info .register-links .login-link {
+.wrapper .register-info .register-links .login-link {
   text-align: center;
   text-decoration: none;
   color: var(--clr-primary);
@@ -342,12 +342,13 @@ body {
   padding: 12px 24px;
   border-radius: 12px;
 }
-.register-info .register-links .login-link:hover {
+.wrapper .register-info .register-links .login-link:hover {
   background-color: var(--clr-secondary);
 }
 
 ._app {
-  height: inherit;
+  height: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -456,25 +457,177 @@ body {
   background-color: var(--clr-secondary);
 }
 ._app .right .rectangle-left {
+  width: 15%;
   position: absolute;
   top: 0;
   left: 0;
 }
+._app .right .rectangle-left svg {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
 ._app .right .rectangle-right {
+  width: 15%;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -0.4%;
+}
+._app .right .rectangle-right svg {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 ._app .right .illustration {
+  height: 100%;
+  width: 100%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 ._app .right .illustration .img {
+  height: 70%;
+  width: 70%;
   position: relative;
   z-index: 1;
 }
+._app .right .illustration .img svg {
+  height: 100%;
+  width: 100%;
+}
 ._app .right .illustration .rectangle-center {
   position: absolute;
+  width: 80%;
+  height: 80%;
+}
+._app .right .illustration .rectangle-center svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .app .nav .nav-wrapper .nav-list {
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .app .nav .nav-btns .nav-reg, .app .nav .nav-btns .nav-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .app .nav .nav-wrapper .nav-list {
+    display: none;
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--clr-third);
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu:hover {
+    border: 1px solid var(--clr-primary);
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu:hover span::before, .app .nav .nav-wrapper .nav-btns .nav-menu:hover span::after {
+    background-color: var(--clr-primary);
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu.active span::before {
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu.active span::after {
+    transform: rotate(-45deg);
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu span {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.25rem;
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu span::before, .app .nav .nav-wrapper .nav-btns .nav-menu span::after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 1px;
+    background-color: var(--clr-fourth);
+    transition: 0.3s;
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu .nav-list__mobile {
+    display: none;
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu .nav-list__mobile.active {
+    display: flex;
+    row-gap: 0.5rem;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    right: 0;
+    top: 140%;
+    padding: 12px;
+    border: 1px solid var(--clr-third);
+    border-radius: 9px;
+    background-color: var(--clr-background);
+    z-index: 10;
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu .nav-list__mobile.active .nav-item .nav-link {
+    text-decoration: none;
+    color: var(--clr-fourth);
+    transition: 0.3s;
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu .nav-list__mobile.active .nav-item .nav-link.active {
+    color: var(--clr-primary);
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-menu .nav-list__mobile.active .nav-item .nav-link:hover {
+    color: var(--clr-primary);
+  }
+  .app .nav .nav-wrapper .nav-btns .nav-logout, .app .nav .nav-wrapper .nav-btns .nav-reg {
+    font-size: var(--link-font-size);
+  }
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  ._app {
+    height: 150vh;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .wrapper .register-info {
+    width: 100%;
+  }
+  .wrapper .register-info .register-links {
+    flex-direction: column;
+    row-gap: 0.75rem;
+    width: 100%;
+  }
+  .wrapper .register-info .register-links .register-link, .wrapper .register-info .register-links .login-link {
+    text-align: center;
+    width: 100%;
+  }
+  ._app .left {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  ._app .left .form-wrapper {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
