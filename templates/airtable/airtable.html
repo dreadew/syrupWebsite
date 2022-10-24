@@ -43,7 +43,7 @@
                 <div class="nav-btns">
                     <a href="{% url 'logout' %}" class="nav-logout">Выйти</a>
                     {% if user.is_superuser %}
-                        <a href="{% url 'register' %}" class="nav-reg">Зарегистрировать аккаунт</a>
+                        <a href="{% url 'register' %}" class="nav-reg">Регистрация</a>
                     {% endif %}
                     <div class="nav-menu">
                         <span class="menu-btn"></span>
@@ -74,7 +74,8 @@
                     <h2 class="upper-title">Untitled Base</h2>
                     <a href="{% url 'airtable-create' %}" class="upper-button">Добавить запись</a>
                 </div>
-                <table class="section-data">
+                <div class="lower">
+                    <table class="section-data">
                         <tr class="data-wrapper">
                             <th class="data-text">Id</th>
                             <th class="data-text">Name</th>
@@ -106,7 +107,8 @@
                             </td>
                         </tr>
                     {% endfor %}
-                </table>
+                    </table>
+                </div>
             </div>
         </section>
     </div>
